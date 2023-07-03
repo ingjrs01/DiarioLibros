@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: Libros
+pagination: 
+  data: collections.books
+  size: 8
+  reverse: true
+
+---
+
+<main>
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-12">
+      {% for book in pagination.items %}
+        <div class="row post-preview">
+            <div class="col-2">
+            <img class="caratula" src=./img/{{book.data.image}} />
+            </div>
+        <div class="col-10">
+          <a href="{{ book.url }}">
+            <h2 class="post-title">{{ book.data.title }}</h2>
+            <h3 class="post-subtitle">{{ book.data.autor }}</h3>
+            </a>
+            </div>
+          <p class="post-meta">
+            Publicado por
+            <a href="#!">Juan</a>
+            {{ book.data.date | asDate }}
+          </p>
+        </div>
+        <hr class="my-4"/>
+      {%- endfor -%}
+    </div>
+    <nav aria-labelledby="my-pagination">
+      <ul id="pagination" class="pagination pagination-sm">
+        {%- for pageEntry in pagination.pages %}
+          <li class="page-item">
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="page-link" {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" {% endif %}>{{ loop.index }}</a>
+          </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</main>

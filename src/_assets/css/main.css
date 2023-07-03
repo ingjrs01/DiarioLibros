@@ -1,0 +1,22 @@
+/* Bootstrap Overrides
+/*@import './base/bootstrap_overrides';
+
+// Bootstrap
+//@import './vendor/bootstrap';
+*/
+body {
+  font-family: sans-serif;
+  background-color: aquamarine;
+
+}
+
+h2.post-title {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 800;
+  line-height: 1.2;
+  color: #212529;
+}
+
+img.caratula {
+  width: 150px;
+}
